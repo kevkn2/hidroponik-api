@@ -1,5 +1,6 @@
 const express = require("express")
 const model = require("./models/model") // new
+const mongoose = require("mongoose")
 const router = express.Router()
 
 // Get last post
@@ -27,6 +28,7 @@ router.get("/get_all", async (req, res) => {
 //Post new
 router.post("/post", async (req, res) => {
     const data = new model({
+      _id: new mongoose.Types.ObjectId(),
       tds: req.body.tds,
       ph: req.body.ph,
       ec: req.body.ec
