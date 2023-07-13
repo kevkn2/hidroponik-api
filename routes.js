@@ -31,7 +31,9 @@ router.post("/post", async (req, res) => {
       _id: new mongoose.Types.ObjectId(),
       tds: req.body.tds,
       ph: req.body.ph,
-      ec: req.body.ec
+      ec: req.body.ec,
+      temp: req.body.temp,
+      hum: req.body.hum
     })
     try {
         const dataToSave = await data.save();
